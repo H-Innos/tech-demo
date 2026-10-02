@@ -1,0 +1,234 @@
+# =========================================================
+#  OpenGL Graphics Project .gitignore
+# =========================================================
+
+# ---------------------------------------------------------
+# Build output directories
+# ---------------------------------------------------------
+build/
+Build/
+builds/
+out/
+bin/
+obj/
+lib/
+Debug/
+Release/
+RelWithDebInfo/
+MinSizeRel/
+x64/
+x86/
+Win32/
+ARM/
+ARM64/
+cmake-build-*/
+
+# ---------------------------------------------------------
+# CMake
+# ---------------------------------------------------------
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+CMakeUserPresets.json
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+Testing/
+
+# ---------------------------------------------------------
+# Make / Ninja / Meson / Premake
+# ---------------------------------------------------------
+Makefile
+!/Makefile
+*.ninja
+.ninja_deps
+.ninja_log
+meson-logs/
+meson-private/
+
+# ---------------------------------------------------------
+# Compiled object files and binaries
+# ---------------------------------------------------------
+*.o
+*.obj
+*.ko
+*.elf
+*.slo
+*.lo
+*.gch
+*.pch
+*.ilk
+*.exp
+*.idb
+*.pdb
+*.map
+
+# Libraries
+*.a
+*.lib
+*.la
+*.lai
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Executables
+*.exe
+*.out
+*.app
+*.x86_64
+*.i*86
+
+# Debug / crash dumps
+*.dSYM/
+*.dmp
+*.stackdump
+core
+core.*
+vgcore.*
+
+# ---------------------------------------------------------
+# Shaders (compiled / cached)
+# ---------------------------------------------------------
+*.spv
+*.spirv
+*.cso
+*.glsl.cache
+shader_cache/
+
+# ---------------------------------------------------------
+# Graphics tooling captures & runtime files
+# ---------------------------------------------------------
+# RenderDoc captures
+*.rdc
+# Nsight / apitrace
+*.nsight-gfxproj
+*.trace
+# Dear ImGui layout file
+imgui.ini
+# Screenshots / logs generated at runtime
+screenshots/
+*.log
+
+# ---------------------------------------------------------
+# Package managers / dependencies
+# ---------------------------------------------------------
+vcpkg_installed/
+.conan/
+conan.lock
+conanbuildinfo.*
+conaninfo.txt
+graph_info.json
+CMakeUserPresets.json
+
+# ---------------------------------------------------------
+# Visual Studio
+# ---------------------------------------------------------
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+*.sdf
+*.opensdf
+*.aps
+*.ncb
+*.tlog
+*.lastbuildstate
+ipch/
+enc_temp_folder/
+
+# ---------------------------------------------------------
+# Visual Studio Code
+# ---------------------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+*.code-workspace
+
+# ---------------------------------------------------------
+# JetBrains (CLion, Rider, etc.)
+# ---------------------------------------------------------
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# ---------------------------------------------------------
+# Xcode
+# ---------------------------------------------------------
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+xcuserdata/
+DerivedData/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+
+# ---------------------------------------------------------
+# Qt Creator
+# ---------------------------------------------------------
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+
+# ---------------------------------------------------------
+# Code::Blocks
+# ---------------------------------------------------------
+*.depend
+*.layout
+*.cbTemp
+
+# ---------------------------------------------------------
+# Eclipse CDT
+# ---------------------------------------------------------
+.metadata/
+.settings/
+.project
+.cproject
+
+# ---------------------------------------------------------
+# Vim / Emacs / Sublime
+# ---------------------------------------------------------
+*.swp
+*.swo
+*~
+\#*\#
+.\#*
+*.sublime-workspace
+.clangd/
+.cache/
+
+# ---------------------------------------------------------
+# OS-generated files
+# ---------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+.Trash-*
