@@ -1,6 +1,7 @@
 //#include "Image.h"
 #include "mesh.h"
 #include "texture.h"
+#include "camera.h"
 // Always include window first (because it includes glfw, which includes GL which needs to be included AFTER glew).
 // Can't wait for modules to fix this stuff...
 #include <framework/disable_all_warnings.h>
@@ -26,6 +27,7 @@ public:
     Application()
         : m_window("Final Project", glm::ivec2(1024, 1024), OpenGLVersion::GL41)
         , m_texture(RESOURCE_ROOT "resources/checkerboard.png")
+        , m_camera(&m_window, glm::vec3(1.5f, 1.0f, 1.0f), -glm::vec3(1.5f, 1.0f, 1.0f))
     {
         m_window.registerKeyCallback([this](int key, int scancode, int action, int mods) {
             if (action == GLFW_PRESS)
@@ -71,6 +73,7 @@ public:
             // This is your game loop
             // Put your real-time logic and rendering in here
             m_window.updateInput();
+            m_camera.updateInput();
 
             // Use ImGui for easy input/output of ints, floats, strings, etc...
             ImGui::Begin("Window");
@@ -86,7 +89,7 @@ public:
             // ...
             glEnable(GL_DEPTH_TEST);
 
-            const glm::mat4 mvpMatrix = m_projectionMatrix * m_viewMatrix * m_modelMatrix;
+            const glm::mat4 mvpMatrix = m_projectionMatrix * m_camera.viewMatrix() * m_modelMatrix;
             // Normals should be transformed differently than positions (ignoring translations + dealing with scaling):
             // https://paroj.github.io/gltut/Illumination/Tut09%20Normal%20Transformation.html
             const glm::mat3 normalModelMatrix = glm::inverseTranspose(glm::mat3(m_modelMatrix));
@@ -161,11 +164,11 @@ private:
 
     std::vector<GPUMesh> m_meshes;
     Texture m_texture;
+    Camera m_camera;
     bool m_useMaterial { true };
 
     // Projection and view matrices for you to fill in and use
     glm::mat4 m_projectionMatrix = glm::perspective(glm::radians(80.0f), 1.0f, 0.1f, 30.0f);
-    glm::mat4 m_viewMatrix = glm::lookAt(glm::vec3(-1, 1, -1), glm::vec3(0), glm::vec3(0, 1, 0));
     glm::mat4 m_modelMatrix { 1.0f };
 };
 
