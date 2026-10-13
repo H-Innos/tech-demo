@@ -44,7 +44,7 @@ public:
     bool hasTextureCoords() const;
 
     // Bind VAO and call glDrawElements.
-    void draw(const Shader& drawingShader);
+    void draw(const Shader& drawingShader, bool bindMaterial = true);
 
 private:
     void moveInto(GPUMesh&&);
